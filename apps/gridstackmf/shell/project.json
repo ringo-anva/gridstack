@@ -19,7 +19,11 @@
           "apps/gridstackmf/shell/src/favicon.ico",
           "apps/gridstackmf/shell/src/assets"
         ],
-        "styles": ["apps/gridstackmf/shell/src/styles.css"],
+        "styles": [
+          "apps/gridstackmf/shell/src/styles.css",
+          "node_modules/gridstack/dist/gridstack.min.css",
+          "node_modules/gridstack/dist/gridstack-extra.min.css"
+        ],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/gridstackmf/shell/webpack.config.ts"
