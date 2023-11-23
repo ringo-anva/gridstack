@@ -1,0 +1,33 @@
+{
+  "name": "apps/gridstackmf/shell-e2e",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/gridstackmf/shell-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/gridstackmf/shell-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "apps/gridstackmf/shell:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "apps/gridstackmf/shell:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "apps/gridstackmf/shell:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/gridstackmf/shell-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["apps/gridstackmf/shell"]
+}

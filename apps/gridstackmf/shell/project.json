@@ -1,0 +1,105 @@
+{
+  "name": "apps/gridstackmf/shell",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "gridstack",
+  "sourceRoot": "apps/gridstackmf/shell/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:webpack-browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/gridstackmf/shell",
+        "index": "apps/gridstackmf/shell/src/index.html",
+        "main": "apps/gridstackmf/shell/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/gridstackmf/shell/tsconfig.app.json",
+        "assets": [
+          "apps/gridstackmf/shell/src/favicon.ico",
+          "apps/gridstackmf/shell/src/assets"
+        ],
+        "styles": ["apps/gridstackmf/shell/src/styles.css"],
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "apps/gridstackmf/shell/webpack.config.ts"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "apps/gridstackmf/shell/webpack.prod.config.ts"
+          }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@nx/angular:module-federation-dev-server",
+      "options": {
+        "port": 4200,
+        "publicHost": "http://localhost:4200"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "apps/gridstackmf/shell:build:production"
+        },
+        "development": {
+          "buildTarget": "apps/gridstackmf/shell:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "apps/gridstackmf/shell:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "apps/gridstackmf/shell/**/*.ts",
+          "apps/gridstackmf/shell/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/gridstackmf/shell/jest.config.ts"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "apps/gridstackmf/shell:build",
+        "port": 4200
+      }
+    }
+  }
+}

@@ -10,6 +10,10 @@
 - Test runner to use for end to end (E2E) tests · none
 - Enable distributed caching to make your CI faster · No
 
+2. cmd `npx nx generate @nx/angular:host --name=apps/gridstackmf/shell --remotes=apps/gridstackmf/remote1,apps/gridstackmf/remote2 --projectNameAndRootFormat=as-provided --no-interactive`
+
+3. server shell with remotes with cmd `npx nx run apps/gridstackmf/shell:serve:development --devRemotes=apps/gridstackmf/remote1,apps/gridstackmf/remote2`
+
 # Gridstack
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
