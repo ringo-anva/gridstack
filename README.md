@@ -1,14 +1,14 @@
 1. cmd `npx create-nx-workspace`
 
-✔ Where would you like to create your workspace? · gridstack
-✔ Which stack do you want to use? · angular
-✔ Integrated monorepo, or standalone project? · integrated
-✔ Application name · gridstack-withoutmf
-✔ Which bundler would you like to use? · webpack
-✔ Default stylesheet format · scss
-✔ Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)? · No
-✔ Test runner to use for end to end (E2E) tests · none
-✔ Enable distributed caching to make your CI faster · No
+- Where would you like to create your workspace? · gridstack
+- Which stack do you want to use? · angular
+- Integrated monorepo, or standalone project? · integrated
+- Application name · gridstack-withoutmf
+- Which bundler would you like to use? · webpack
+- Default stylesheet format · scss
+- Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)? · No
+- Test runner to use for end to end (E2E) tests · none
+- Enable distributed caching to make your CI faster · No
 
 # Gridstack
 
