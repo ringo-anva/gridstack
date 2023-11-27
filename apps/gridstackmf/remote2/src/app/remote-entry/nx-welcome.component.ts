@@ -45,7 +45,7 @@ export class NxWelcomeComponent {
     acceptWidgets: true,
     float: true,
     children: [
-      { x: 0, y: 0, w: 2, h: 2, content: 'cell 1 remote 1' },
+      { x: 0, y: 0, w: 2, h: 2, content: 'cell 1 remote 2' },
       { x: 3, y: 1, h: 2 },
       { x: 4, y: 1 },
       { x: 2, y: 3, w: 3, maxW: 3, id: 'special', content: 'has maxW=3' },
