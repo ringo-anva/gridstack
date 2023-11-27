@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "serve": "nx run apps/gridstackmf/shell:serve:development --devRemotes=apps/gridstackmf/remote1,apps/gridstackmf/remote2"
+    "start": "nx run apps/gridstackmf/shell:serve:development --devRemotes=apps/gridstackmf/remote1,apps/gridstackmf/remote2"
   },
   "private": true,
   "dependencies": {
